@@ -1,0 +1,20 @@
+{
+  "name": "أسرار وخصائص علم الحروف",
+  "short_name": "علم الحروف",
+  "description": "تطبيق لعرض خصائص حروف الأسماء ومعانيها وعلم الجفر والاستقراء وتفسير الأحلام",
+  "start_url": "index.html",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#1A237E",
+  "theme_color": "#1A237E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

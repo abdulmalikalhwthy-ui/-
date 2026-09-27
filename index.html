@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1A237E">
+  <title>أسرار وخصائص علم الحروف</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="quran-seeker.css">
+  <style>
+    /* ============================================================
+       أنماط كلاسيكية راقية
+       ============================================================ */
+    * {
+      font-family: 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: #F5F3EE;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(26,35,126,0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255,193,7,0.05) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+
+    /* ============ الشريط العلوي ============ */
+    .topbar-home {
+      background: linear-gradient(135deg, #0D1B5E 0%, #1A237E 50%, #283593 100%);
+      padding: 18px 16px;
+      box-shadow: 0 4px 20px rgba(26,35,126,0.3);
+      position: relative;
+    }
+    .topbar-home::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #FFD54F, transparent);
+    }
+    .topbar-home h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-icon {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 8px 10px;
+      transition: background .2s;
+      font-size: 18px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn-icon:active {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ============ بطاقة الهيرو ============ */
+    .hero-card {
+      margin: 16px;
+      padding: 24px 20px;
+      background: linear-gradient(135deg, #283593 0%, #1A237E 60%, #0D1B5E 100%);
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(26,35,126,0.35);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: -20%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,213,79,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      bottom: -50%;
+      right: -10%;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,31,162,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,213,79,0.25), rgba(255,193,7,0.1));
+      border: 1px solid rgba(255,213,79,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(255,193,7,0.15);
+    }
+    .hero-title {
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+    .hero-subtitle {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* حقول الإدخال داخل الهيرو */
+    .hero-input-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .hero-input {
+      width: 100%;
+      padding: 16px 52px 16px 16px;
+      background: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1A237E;
+      outline: none;
+      font-family: inherit;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .hero-input::placeholder {
+      color: #999;
+      font-weight: 400;
+    }
+    .hero-input-icon {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #1A237E;
+      pointer-events: none;
+    }
+
+    /* زر التاريخ */
+    .hero-date-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .hero-date {
+      width: 100%;
+      padding: 14px 52px 14px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      font-size: 14px;
+      color: #FFFFFF;
+      outline: none;
+      font-family: inherit;
+      font-weight: 500;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .hero-date::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    .hero-date-icon {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      pointer-events: none;
+    }
+    .hero-date-arrow {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    /* الزر الذهبي الرئيسي */
+    .btn-gold {
+      width: 100%;
+      padding: 17px 20px;
+      background: linear-gradient(135deg, #FFB300 0%, #FFC107 50%, #FFD54F 100%);
+      border: none;
+      border-radius: 16px;
+      font-size: 17px;
+      font-weight: 900;
+      color: #1A237E;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(255,179,0,0.35);
+      transition: all .2s;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-gold:active {
+      transform: scale(.98);
+      box-shadow: 0 3px 10px rgba(255,179,0,0.3);
+    }
+
+    /* ============ عنوان قسم ============ */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 24px 20px 12px;
+    }
+    .section-title .bar {
+      width: 4px;
+      height: 22px;
+      background: linear-gradient(180deg, #1A237E, #4A148C);
+      border-radius: 2px;
+    }
+    .section-title .title-text {
+      font-size: 17px;
+      font-weight: 900;
+      color: #1A237E;
+    }
+    .section-title .count-badge {
+      background: linear-gradient(135deg, #E8EAF6, #C5CAE9);
+      color: #1A237E;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-right: auto;
+    }
+    .section-title .hint-text {
+      font-size: 12.5px;
+      color: #888;
+      font-weight: 500;
+      margin-right: auto;
+    }
+
+    /* ============ بطاقات القائمة ============ */
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0 16px 30px;
+    }
+
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 16px;
+      background: #FFFFFF;
+      border: 1px solid #ECEEF6;
+      border-radius: 18px;
+      cursor: pointer;
+      text-align: right;
+      width: 100%;
+      font-family: inherit;
+      transition: all .2s;
+      box-shadow: 0 2px 10px rgba(26,35,126,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .menu-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      opacity: 0.6;
+    }
+    .menu-btn:active {
+      transform: scale(.985);
+      box-shadow: 0 1px 4px rgba(26,35,126,0.08);
+    }
+
+    .menu-btn .menu-text {
+      flex: 1;
+      text-align: right;
+    }
+    .menu-btn .menu-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1A237E;
+      margin-bottom: 5px;
+      letter-spacing: 0.2px;
+    }
+    .menu-btn .menu-sub {
+      font-size: 12.5px;
+      color: #7B84A8;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* أيقونة اللوحة الملوّنة */
+    .menu-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      color: #fff;
+    }
+
+    /* ألوان الأيقونات */
+    .menu-icon-green  { background: linear-gradient(135deg, #2E7D32, #4CAF50); box-shadow: 0 4px 12px rgba(46,125,50,0.3); }
+    .menu-icon-orange { background: linear-gradient(135deg, #E65100, #FF9800); box-shadow: 0 4px 12px rgba(230,81,0,0.3); }
+    .menu-icon-blue   { background: linear-gradient(135deg, #1A237E, #3F51B5); box-shadow: 0 4px 12px rgba(26,35,126,0.3); }
+    .menu-icon-purple { background: linear-gradient(135deg, #4A148C, #7B1FA2); box-shadow: 0 4px 12px rgba(74,20,140,0.3); }
+    .menu-icon-teal   { background: linear-gradient(135deg, #004D40, #00897B); box-shadow: 0 4px 12px rgba(0,77,64,0.3); }
+    .menu-icon-red    { background: linear-gradient(135deg, #B71C1C, #E53935); box-shadow: 0 4px 12px rgba(183,28,28,0.3); }
+    .menu-icon-gold   { background: linear-gradient(135deg, #B8860B, #FFC107); box-shadow: 0 4px 12px rgba(184,134,11,0.3); }
+    .menu-icon-pink   { background: linear-gradient(135deg, #880E4F, #E91E63); box-shadow: 0 4px 12px rgba(136,14,79,0.3); }
+
+    /* ألوان الشريط الجانبي */
+    .menu-btn.line-green::before  { background: linear-gradient(180deg, #2E7D32, #4CAF50); }
+    .menu-btn.line-orange::before { background: linear-gradient(180deg, #E65100, #FF9800); }
+    .menu-btn.line-blue::before   { background: linear-gradient(180deg, #1A237E, #3F51B5); }
+    .menu-btn.line-purple::before { background: linear-gradient(180deg, #4A148C, #7B1FA2); }
+    .menu-btn.line-teal::before   { background: linear-gradient(180deg, #004D40, #00897B); }
+    .menu-btn.line-gold::before   { background: linear-gradient(180deg, #B8860B, #FFC107); }
+
+    /* شارة العدد + السهم */
+    .menu-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .menu-count {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #F0F2F9;
+      color: #1A237E;
+      font-size: 13px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-arrow {
+      color: #C5CAE9;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    /* ============ الشاشات الفرعية ============ */
+    .topbar {
+      background: linear-gradient(135deg, #0D1B5E 0%, #1A237E 50%, #283593 100%);
+      padding: 18px 16px;
+      box-shadow: 0 4px 20px rgba(26,35,126,0.3);
+      position: relative;
+    }
+    .topbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #FFD54F, transparent);
+    }
+    .topbar h2 {
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .btn-back {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-fav {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 18px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-fav.active {
+      color: #FF5252;
+      background: rgba(255,82,82,0.15);
+    }
+
+    /* القسم الداخلي في الشاشات الفرعية */
+    .sub-menu-header {
+      margin: 16px;
+      padding: 22px 20px;
+      background: linear-gradient(135deg, #283593 0%, #1A237E 100%);
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(26,35,126,0.3);
+    }
+    .sub-menu-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,213,79,0.15) 0%, transparent 70%);
+    }
+    .sub-menu-header .header-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,213,79,0.25), rgba(255,193,7,0.1));
+      border: 1px solid rgba(255,213,79,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .sub-menu-header .header-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .sub-menu-header .header-sub {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شاشة الافتتاحية -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo">
+        <div class="splash-circle-outer">
+          <div class="splash-circle-inner">
+            <span class="splash-letter">ع</span>
+          </div>
+          <span class="splash-dot dot-1">أ</span>
+          <span class="splash-dot dot-2">ب</span>
+          <span class="splash-dot dot-3">ج</span>
+          <span class="splash-dot dot-4">د</span>
+          <span class="splash-dot dot-5">هـ</span>
+          <span class="splash-dot dot-6">و</span>
+          <span class="splash-dot dot-7">ز</span>
+          <span class="splash-dot dot-8">ح</span>
+        </div>
+      </div>
+      <h1 class="splash-title">أسرار وخصائص علم الحروف</h1>
+      <p class="splash-subtitle">علم الحروف والأسماء والجفر</p>
+      <div class="splash-loader">
+        <div class="splash-loader-dot"></div>
+        <div class="splash-loader-dot"></div>
+        <div class="splash-loader-dot"></div>
+      </div>
+    </div>
+    <div class="splash-footer">✦ من نور الحروف تتجلى المعاني ✦</div>
+  </div>
+
+  <!-- 🏠 الشاشة الرئيسية -->
+  <div id="screen-home" class="screen active">
+    <div class="topbar-home">
+      <button class="btn-icon" onclick="toggleDarkMode()" id="darkToggle">🌙</button>
+      <h3>أسرار وخصائص علم الحروف</h3>
+      <div style="display:flex;gap:4px">
+        <button class="btn-icon" onclick="showDailyName()">🔔</button>
+        <button class="btn-icon" onclick="showSettings()">⚙️</button>
+        <button class="btn-icon" onclick="confirmExit()" title="خروج">🚪</button>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-inner">
+        <div class="hero-badge">✨</div>
+        <div class="hero-title">اعرف خصائص اسمك</div>
+        <div class="hero-subtitle">أدخل الاسم لعرض خصائص حروفه ومعناه وطبيعته</div>
+
+        <div class="hero-input-wrap">
+          <input type="text" id="nameInput" class="hero-input" placeholder="اكتب الاسم هنا..." autocomplete="off">
+          <span class="hero-input-icon">👤</span>
+        </div>
+
+        <div class="hero-date-wrap">
+          <input type="date" id="birthDate" class="hero-date">
+          <span class="hero-date-icon">🎂</span>
+          <span class="hero-date-arrow">⌄</span>
+        </div>
+
+        <button id="searchBtn" class="btn-gold">
+          <span>✨</span>
+          <span>عرض الخصائص</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="title-text">أقسام التطبيق</span>
+      <span class="hint-text">اضغط للدخول</span>
+      <span class="count-badge">6</span>
+    </div>
+
+    <div class="menu-grid">
+
+      <button class="menu-btn line-green" onclick="safeCall('showWordsFactsScreen')">
+        <div class="menu-icon-box menu-icon-green">📖</div>
+        <div class="menu-text">
+          <div class="menu-title">حقائق الألفاظ ومعانيها</div>
+          <div class="menu-sub">معاني الأسماء والحروف والمفردات</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-count">3</div>
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+      <button class="menu-btn line-orange" onclick="safeCall('showJafrMenuScreen')">
+        <div class="menu-icon-box menu-icon-orange">➕</div>
+        <div class="menu-text">
+          <div class="menu-title">علم الجفر وخصائصه</div>
+          <div class="menu-sub">الحسابات والأوفاق والحروف</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-count">7</div>
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+      <button class="menu-btn line-blue" onclick="safeCall('showDreamsMenuScreen')">
+        <div class="menu-icon-box menu-icon-blue">🌙</div>
+        <div class="menu-text">
+          <div class="menu-title">نافذة تفسير الأحلام</div>
+          <div class="menu-sub">رموز الرؤيا ودلالاتها</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-count">2</div>
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+      <button class="menu-btn line-purple" onclick="safeCall('showNamesFactsScreen')">
+        <div class="menu-icon-box menu-icon-purple">📚</div>
+        <div class="menu-text">
+          <div class="menu-title">حقائق الأسماء ومعانيها</div>
+          <div class="menu-sub">المفضلة • السجل • اسم مقترح</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-count">3</div>
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+      <button class="menu-btn line-gold" onclick="safeCall('showQuranSeekerScreen')">
+        <div class="menu-icon-box menu-icon-gold">🔮</div>
+        <div class="menu-text">
+          <div class="menu-title">الكاشف القرآني</div>
+          <div class="menu-sub">فتح المصحف واستخراج الآية والحرف</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-count">7</div>
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+      <button class="menu-btn line-teal" onclick="safeCall('showFreeAISettings')">
+        <div class="menu-icon-box menu-icon-teal">🤖</div>
+        <div class="menu-text">
+          <div class="menu-title">تفعيل الذكاء الاصطناعي</div>
+          <div class="menu-sub">Google Gemini — مجاناً</div>
+        </div>
+        <div class="menu-side">
+          <div class="menu-arrow">‹</div>
+        </div>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- 📚 شاشة حقائق الأسماء -->
+  <div id="screen-names-facts" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>📚 حقائق الأسماء ومعانيها</h2>
+      <span></span>
+    </div>
+
+    <div class="sub-menu-header">
+      <div class="header-badge">📚</div>
+      <div class="header-title">حقائق الأسماء</div>
+      <div class="header-sub">اكتشف أسماء جديدة، واحفظ مفضلاتك، وتصفح سجل البحث</div>
+    </div>
+
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="title-text">اختر الخيار</span>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-btn line-red" onclick="safeCall('showFavorites')">
+        <div class="menu-icon-box menu-icon-red">❤️</div>
+        <div class="menu-text">
+          <div class="menu-title">المفضلة</div>
+          <div class="menu-sub">الأسماء التي حفظتها</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-blue" onclick="safeCall('showHistory')">
+        <div class="menu-icon-box menu-icon-blue">🕐</div>
+        <div class="menu-text">
+          <div class="menu-title">سجل البحث</div>
+          <div class="menu-sub">آخر الأسماء التي بحثت عنها</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-gold" onclick="safeCall('showNameGenerator')">
+        <div class="menu-icon-box menu-icon-gold">🎲</div>
+        <div class="menu-text">
+          <div class="menu-title">اسم مقترح</div>
+          <div class="menu-sub">اقتراح اسم عشوائي مع معناه</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- 📖 شاشة حقائق الألفاظ -->
+  <div id="screen-words-facts" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>📖 حقائق الألفاظ ومعانيها</h2>
+      <span></span>
+    </div>
+
+    <div class="sub-menu-header">
+      <div class="header-badge">📖</div>
+      <div class="header-title">حقائق الألفاظ</div>
+      <div class="header-sub">معاني الحروف، والمحرك الدلالي، والتحليل الجامع للكلمات</div>
+    </div>
+
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="title-text">اختر الخيار</span>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-btn line-green" onclick="safeCall('showLettersInfo')">
+        <div class="menu-icon-box menu-icon-green">📖</div>
+        <div class="menu-text">
+          <div class="menu-title">خصائص الحروف</div>
+          <div class="menu-sub">تفاصيل كل حرف من الحروف الـ 28</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-blue" onclick="safeCall('showAISemanticScreen')">
+        <div class="menu-icon-box menu-icon-blue">🧠</div>
+        <div class="menu-text">
+          <div class="menu-title">محرك المعاني</div>
+          <div class="menu-sub">بحث معجمي دلالي عن معنى الكلمة</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-purple" onclick="safeCall('showDeepSemanticScreen')">
+        <div class="menu-icon-box menu-icon-purple">🌟</div>
+        <div class="menu-text">
+          <div class="menu-title">التحليل الجامع</div>
+          <div class="menu-sub">نيلي + أهل البيت + قرآن + قاموس</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- 🔮 شاشة علم الجفر — قائمة -->
+  <div id="screen-jafr-menu" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>🔮 علم الجفر وخصائصه</h2>
+      <span></span>
+    </div>
+
+    <div class="sub-menu-header">
+      <div class="header-badge">🔮</div>
+      <div class="header-title">علم الجفر</div>
+      <div class="header-sub">علم يُبحث فيه عن الحروف وأجزائها، ودلالتها على الحوادث المخزونة في كنوز الحروف</div>
+    </div>
+
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="title-text">اختر القسم</span>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-btn line-blue" onclick="safeCall('showJafrMenuPlanets')">
+        <div class="menu-icon-box menu-icon-blue">🪐</div>
+        <div class="menu-text">
+          <div class="menu-title">الكواكب والحروف</div>
+          <div class="menu-sub">تخصيص كل حرف بفلكه</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-teal" onclick="safeCall('showJafrMenuCircles')">
+        <div class="menu-icon-box menu-icon-teal">⚪</div>
+        <div class="menu-text">
+          <div class="menu-title">الدائرتان</div>
+          <div class="menu-sub">دائرة أبجد ودائرة أيقغ</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-red" onclick="safeCall('showJafrMenuNatures')">
+        <div class="menu-icon-box menu-icon-red">🔥</div>
+        <div class="menu-text">
+          <div class="menu-title">الطبائع الأربع</div>
+          <div class="menu-sub">نار • هواء • ماء • تراب</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-orange" onclick="safeCall('showJafrMenuUpgrade')">
+        <div class="menu-icon-box menu-icon-orange">⬆️</div>
+        <div class="menu-text">
+          <div class="menu-title">الترقّي</div>
+          <div class="menu-sub">ترقّي عددي • بزيادة جنس • طبيعي</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-green" onclick="safeCall('showJafrMenuExpansion')">
+        <div class="menu-icon-box menu-icon-green">📐</div>
+        <div class="menu-text">
+          <div class="menu-title">البسط</div>
+          <div class="menu-sub">صغير • متوسط • كبير</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-gold" onclick="safeCall('showJafrCalculatorAdvanced')">
+        <div class="menu-icon-box menu-icon-gold">⚗️</div>
+        <div class="menu-text">
+          <div class="menu-title">حاسبة عمليات الجفر</div>
+          <div class="menu-sub">البسط • الكسر • الطرح • التوليد • اللقط</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-purple" onclick="safeCall('showJafrAdvancedScreen')">
+        <div class="menu-icon-box menu-icon-purple">🔮</div>
+        <div class="menu-text">
+          <div class="menu-title">الاستخراج الجفري المتقدم</div>
+          <div class="menu-sub">11 مرحلة • احتمالات • توقيت • نصائح</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- 🌙 شاشة تفسير الأحلام — قائمة -->
+  <div id="screen-dreams-menu" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>🌙 تفسير الأحلام</h2>
+      <span></span>
+    </div>
+
+    <div class="sub-menu-header">
+      <div class="header-badge">🌙</div>
+      <div class="header-title">نافذة تفسير الأحلام</div>
+      <div class="header-sub">موسوعة شاملة لرموز الأحلام وفق منهج الإمام الصادق (ع)، وابن سيرين، والنابلسي وابن غانم</div>
+    </div>
+
+    <div class="section-title">
+      <span class="bar"></span>
+      <span class="title-text">اختر الخيار</span>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-btn line-blue" onclick="safeCall('showDreamScreen')">
+        <div class="menu-icon-box menu-icon-blue">📖</div>
+        <div class="menu-text">
+          <div class="menu-title">موسوعة رموز الأحلام</div>
+          <div class="menu-sub">212 رمزاً في 16 تصنيفاً + بحث فوري</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+
+      <button class="menu-btn line-purple" onclick="safeCall('showDreamAIScreen')">
+        <div class="menu-icon-box menu-icon-purple">🌙</div>
+        <div class="menu-text">
+          <div class="menu-title">تفسير الأحلام التفاعلي</div>
+          <div class="menu-sub">اكتب رؤياك ← استخراج الرموز + تفسير AI</div>
+        </div>
+        <div class="menu-side"><div class="menu-arrow">‹</div></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- 🔮 شاشة الكاشف القرآني -->
+  <div id="screen-quran-seeker" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>🔮 الكاشف القرآني</h2>
+      <span></span>
+    </div>
+
+    <div class="sub-menu-header">
+      <div class="header-badge">🔮</div>
+      <div class="header-title">الكاشف القرآني</div>
+      <div class="header-sub">اتبع الخطوات بالترتيب للوصول إلى النتيجة</div>
+    </div>
+
+    <div class="qs-progress-wrap">
+      <div class="qs-progress-bar" id="qsProgressBar"></div>
+    </div>
+
+    <div class="qs-container">
+
+      <!-- ١) الوضوء -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">١</div>
+          <div>
+            <div class="qs-step-title">توضّأ قبل العمل</div>
+            <div class="qs-step-sub">ابدأ بطهارة كاملة</div>
+          </div>
+        </div>
+        <label class="qs-check-label">
+          <input type="checkbox" onchange="qsToggleWudu(this.checked)">
+          <span>تمّ الوضوء <span class="qs-badge-done" id="qs-badge-wudu">✔</span></span>
+        </label>
+      </div>
+
+      <!-- ٢) القراءة -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٢</div>
+          <div>
+            <div class="qs-step-title">القراءة</div>
+            <div class="qs-step-sub">الفاتحة ٣ | المعوذتين ١ | الإخلاص ٣</div>
+          </div>
+        </div>
+
+        <div class="qs-counter">
+          <div class="qs-counter-label">سورة الفاتحة <small>المطلوب: ٣</small></div>
+          <div class="qs-counter-controls">
+            <button class="qs-circle-btn qs-reset" onclick="qsResetCounter('fatiha')">تصفير</button>
+            <span class="qs-count-val" id="qs-fatiha">0</span>
+            <button class="qs-circle-btn" onclick="qsIncCounter('fatiha')">+</button>
+          </div>
+        </div>
+
+        <div class="qs-counter">
+          <div class="qs-counter-label">المعوذتين <small>الفلق والناس — مرة</small></div>
+          <div class="qs-counter-controls">
+            <button class="qs-circle-btn qs-reset" onclick="qsResetCounter('muawwidhatayn')">تصفير</button>
+            <span class="qs-count-val" id="qs-muawwidhatayn">0</span>
+            <button class="qs-circle-btn" onclick="qsIncCounter('muawwidhatayn')">+</button>
+          </div>
+        </div>
+
+        <div class="qs-counter">
+          <div class="qs-counter-label">سورة الإخلاص <small>المطلوب: ٣</small></div>
+          <div class="qs-counter-controls">
+            <button class="qs-circle-btn qs-reset" onclick="qsResetCounter('ikhlas')">تصفير</button>
+            <span class="qs-count-val" id="qs-ikhlas">0</span>
+            <button class="qs-circle-btn" onclick="qsIncCounter('ikhlas')">+</button>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          <div class="qs-badge-done" id="qs-badge-fatiha" style="display:none">✔ فاتحة</div>
+          <div class="qs-badge-done" id="qs-badge-muawwidhatayn" style="display:none">✔ معوذتين</div>
+          <div class="qs-badge-done" id="qs-badge-ikhlas" style="display:none">✔ إخلاص</div>
+        </div>
+      </div>
+
+      <!-- ٣) الدعاء -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٣</div>
+          <div>
+            <div class="qs-step-title">ادعُ بهذا الدعاء</div>
+            <div class="qs-step-sub">اقرأه بقلب حاضر</div>
+          </div>
+        </div>
+        <div class="qs-dua-box" id="qs-dua-text">اللهم إني توكلت عليك وتناولت كتابك، فصل على محمد وآل محمد وأرني ما هو المكتوم في سرك المكنون، وغيبك المخزون، اللهم بحق محمد وآل محمد صل عليهم وأخرج لي آية من كتابك، أو حرفاً أستدل به على قضائك وقدرك مما لا علم لي به، اللهم أنت الحق، وقولك حق، أنزل علي الحق، بحرمة محمد وآل محمد، وبحرمتك يا أرحم الراحمين.</div>
+        <button class="qs-btn-ghost" style="width:100%;margin-top:10px" onclick="qsCopyDua()">📋 نسخ الدعاء</button>
+      </div>
+
+      <!-- ٤) الصلاة على محمد وآل محمد -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٤</div>
+          <div>
+            <div class="qs-step-title">الصلاة على محمد وآل محمد</div>
+            <div class="qs-step-sub">اللهم صل على محمد وآل محمد وعجّل فرجهم — ٣ مرات</div>
+          </div>
+        </div>
+        <div class="qs-counter">
+          <div class="qs-counter-label">الصلاة على محمد وآله <small>المطلوب: ٣</small></div>
+          <div class="qs-counter-controls">
+            <button class="qs-circle-btn qs-reset" onclick="qsResetCounter('salawat')">تصفير</button>
+            <span class="qs-count-val" id="qs-salawat">0</span>
+            <button class="qs-circle-btn" onclick="qsIncCounter('salawat')">+</button>
+          </div>
+        </div>
+        <div class="qs-badge-done" id="qs-badge-salawat" style="display:none">✔ صلاة</div>
+      </div>
+
+      <!-- ٥) فتح القرآن والبحث -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٥</div>
+          <div>
+            <div class="qs-step-title">افتح القرآن وابحث تلقائياً</div>
+            <div class="qs-step-sub">سيتم اختيار صفحة عشوائية والبحث عن آية رحمة أو عذاب</div>
+          </div>
+        </div>
+        <button class="qs-btn-gold" onclick="qsOpenQuranAndAnalyze(this)">
+          🔍 فتح القرآن والبحث
+        </button>
+        <p class="qs-hint">
+          ⓘ يبحث التطبيق داخل الصفحات تلقائياً حتى يجد آية رحمة أو عذاب، ثم يضيف ١٤ صفحة (سبع ورقات)، ويستخرج السطر السابع والحرف الأول منه.
+        </p>
+      </div>
+
+      <!-- ٦) معلومات البحث -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٦</div>
+          <div>
+            <div class="qs-step-title">معلومات البحث</div>
+            <div class="qs-step-sub">تظهر تلقائياً بعد انتهاء البحث</div>
+          </div>
+        </div>
+        <div class="qs-info-table">
+          <div class="qs-info-row">
+            <span>صفحة الفتح العشوائية:</span>
+            <b id="qs-resStart">—</b>
+          </div>
+          <div class="qs-info-row">
+            <span>الصفحة التي وُجدت فيها الآية:</span>
+            <b id="qs-resFoundPage">—</b>
+          </div>
+          <div class="qs-info-row">
+            <span>نوع الآية:</span>
+            <b id="qs-resFoundType">—</b>
+          </div>
+        </div>
+        <div class="qs-verse-box" id="qs-foundVerseBox">
+          <div class="qs-verse-label">📜 الآية التي وُجدت</div>
+          <p class="qs-verse-text" id="qs-resFoundVerse">—</p>
+        </div>
+      </div>
+
+      <!-- ٧) النتيجة النهائية -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num">٧</div>
+          <div>
+            <div class="qs-step-title">النتيجة النهائية</div>
+            <div class="qs-step-sub">السطر السابع من الورقة السابعة</div>
+          </div>
+        </div>
+        <div class="qs-result" id="qs-resultBox">
+          <div class="qs-result-big" id="qs-targetPageBig">—</div>
+          <div class="qs-result-row"><span>عدد الصفحات المضافة</span><b id="qs-resAdd">—</b></div>
+          <div class="qs-result-row"><span>الصفحة الهدف</span><b id="qs-resTarget">—</b></div>
+
+          <label class="qs-label">نص السطر السابع من الصفحة الهدف</label>
+          <div class="qs-line7-box" id="qs-resLine7">—</div>
+
+          <label class="qs-label">🔤 أول حرف من السطر السابع</label>
+          <div class="qs-letter-display">
+            <input type="text" id="qs-firstLetter" readonly placeholder="—">
+          </div>
+
+          <label class="qs-label">نوع الآية</label>
+          <select id="qs-verseType" class="qs-select">
+            <option value="رحمة">آية رحمة</option>
+            <option value="عذاب">آية عذاب</option>
+            <option value="غير ذلك">غير ذلك</option>
+          </select>
+
+          <label class="qs-label">ملاحظات إضافية</label>
+          <textarea id="qs-notes" rows="3" class="qs-textarea" placeholder="اكتب أي ملاحظة أو آية..."></textarea>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button class="qs-btn-gold" style="flex:1 1 100%" onclick="qsSaveEntry()">💾 حفظ النتيجة</button>
+            <button class="qs-btn-ghost" style="flex:1" onclick="qsOpenTargetOnline()">🌐 عرض الصفحة الهدف</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- السجل -->
+      <div class="qs-step">
+        <div class="qs-step-head">
+          <div class="qs-num" style="background:linear-gradient(135deg,#475569,#1e293b)">📚</div>
+          <div>
+            <div class="qs-step-title">السجل</div>
+            <div class="qs-step-sub">نتائجك المحفوظة على هذا الجهاز</div>
+          </div>
+        </div>
+        <div id="qs-journal"></div>
+        <button class="qs-btn-danger" style="margin-top:8px" onclick="qsClearJournal()">🗑 مسح السجل</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- شاشة النتائج -->
+  <div id="screen-result" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2 id="resultName"></h2>
+      <div style="display:flex;gap:4px">
+        <button class="btn-fav" onclick="shareResult()">📤</button>
+        <button class="btn-fav" id="favBtn" onclick="toggleFavorite()">❤️</button>
+      </div>
+    </div>
+    <div class="result-content" id="resultContent"></div>
+  </div>
+
+  <!-- شاشة القوائم -->
+  <div id="screen-list" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2 id="listTitle"></h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="listContent"></div>
+  </div>
+
+  <!-- شاشة خصائص الحروف -->
+  <div id="screen-letters" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="goHome()">→</button>
+      <h2>📖 خصائص الحروف</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="lettersContent"></div>
+  </div>
+
+  <!-- شاشة علم الجفر الداخلية -->
+  <div id="screen-jafr" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="showJafrMenuScreen()">→</button>
+      <h2>🔮 علم الجفر</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="jafrContent"></div>
+  </div>
+
+  <!-- شاشة الاستخراج الجفري -->
+  <div id="screen-jafr-calc" class="screen">
+    <div class="topbar">
+      <button class="btn-back" onclick="showJafrMenuScreen()">→</button>
+      <h2 id="jafrCalcTitle">⚗️ الاستخراج الجفري</h2>
+      <span></span>
+    </div>
+    <div class="list-content" id="jafrCalcContent"></div>
+  </div>
+
+  <!-- شاشة التحميل للكاشف -->
+  <div class="qs-loading-overlay" id="qsLoadingOverlay">
+    <div class="qs-loading-content">
+      <div class="qs-spinner"></div>
+      <p class="qs-loading-text" id="qsLoadingText">جاري البحث...</p>
+    </div>
+  </div>
+
+  <!-- دوال مساعدة -->
+  <script>
+    window.safeCall = function (fnName) {
+      try {
+        var fn = window[fnName];
+        if (typeof fn === 'function') {
+          var args = Array.prototype.slice.call(arguments, 1);
+          return fn.apply(window, args);
+        }
+        console.error('[safeCall] الدالة "' + fnName + '" غير معرّفة');
+        if (typeof window.showToast === 'function') {
+          window.showToast('⚠️ الوظيفة غير متاحة: ' + fnName);
+        } else {
+          alert('⚠️ الوظيفة "' + fnName + '" غير متاحة.');
+        }
+      } catch (e) {
+        console.error('[safeCall] خطأ:', e);
+        alert('❌ خطأ: ' + (e && e.message ? e.message : e));
+      }
+    };
+
+    window.globalExists = function (name) {
+      try {
+        if (typeof window[name] !== 'undefined' && window[name] !== null) return true;
+      } catch (e) {}
+      try {
+        var checker = new Function('try { return typeof ' + name + ' !== "undefined" && ' + name + ' !== null; } catch(e) { return false; }');
+        return checker();
+      } catch (e) { return false; }
+    };
+
+    window.showNamesFactsScreen = function () {
+      if (typeof window.showScreen === 'function') window.showScreen('screen-names-facts');
+      window.scrollTo(0, 0);
+    };
+    window.showWordsFactsScreen = function () {
+      if (typeof window.showScreen === 'function') window.showScreen('screen-words-facts');
+      window.scrollTo(0, 0);
+    };
+    window.showJafrMenuScreen = function () {
+      if (typeof window.showScreen === 'function') window.showScreen('screen-jafr-menu');
+      window.scrollTo(0, 0);
+    };
+    window.showDreamsMenuScreen = function () {
+      if (typeof window.showScreen === 'function') window.showScreen('screen-dreams-menu');
+      window.scrollTo(0, 0);
+    };
+
+    window.showJafrMenuPlanets = function () { window.safeCall('showJafrPlanets'); };
+    window.showJafrMenuCircles = function () { window.safeCall('showJafrCircles'); };
+    window.showJafrMenuNatures = function () { window.safeCall('showJafrNatures'); };
+    window.showJafrMenuUpgrade = function () { window.safeCall('showJafrUpgrade'); };
+    window.showJafrMenuExpansion = function () { window.safeCall('showJafrExpansion'); };
+  </script>
+
+  <!-- السكريبتات -->
+  <script src="script.js"></script>
+  <script src="extras.js"></script>
+  <script src="extras2.js"></script>
+  <script src="jafr.js"></script>
+  <script src="jafr-advanced.js"></script>
+  <script src="jafr-tools.js"></script>
+  <script src="jafr-ai.js"></script>
+  <script src="dream-interpreter.js"></script>
+  <script src="dream-ai.js"></script>
+  <script src="freeai.js"></script>
+  <script src="quran-index.js"></script>
+  <script src="interactive-ai.js"></script>
+  <script src="deep-semantic.js"></script>
+  <script src="quran-seeker.js"></script>
+
+</body>
+</html>
